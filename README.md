@@ -72,17 +72,190 @@ To run the project locally, follow these steps:
 ## **Project Structure**
 
 ```plaintext
-dev-blogs/
-├── content/                # Contains all the blog posts
-├── public/                 # Public assets like images
-├── src/                    # Main source code for the website
-│   ├── components/         # Reusable components (e.g., Navbar, Footer)
-│   ├── pages/              # Website pages (e.g., Home, About)
-│   └── styles/             # Custom styling for the website
-├── .gitignore              # Ignored files for Git
-├── LICENSE                 # License for the project
-├── README.md               # Project overview (this file)
-└── package.json            # Project dependencies and scripts
+Directory structure:
+└── Developer-Blogs-Dev-blogs/
+    ├── README.md
+    ├── CONTRIBUTING.md
+    ├── Dockerfile
+    ├── LICENSE
+    ├── SECURITY.md
+    ├── astro.config.mjs
+    ├── code_of_conduct.md
+    ├── netlify.toml
+    ├── package.json
+    ├── postcss.config.js
+    ├── tailwind.config.js
+    ├── tsconfig.json
+    ├── .dockerignore
+    ├── .editorconfig
+    ├── .markdownlint.json
+    ├── .prettierrc
+    ├── config/
+    │   └── nginx/
+    │       └── nginx.conf
+    ├── public/
+    │   ├── robots.txt
+    │   ├── .htaccess
+    │   └── images/
+    ├── scripts/
+    │   ├── jsonGenerator.js
+    │   ├── removeDarkmode.js
+    │   └── removeMultilang.js
+    ├── src/
+    │   ├── env.d.ts
+    │   ├── config/
+    │   │   ├── config.json
+    │   │   ├── language.json
+    │   │   ├── menu.en.json
+    │   │   ├── menu.fr.json
+    │   │   ├── social.json
+    │   │   └── theme.json
+    │   ├── content/
+    │   │   ├── config.ts
+    │   │   ├── about/
+    │   │   │   ├── english/
+    │   │   │   │   └── -index.md
+    │   │   │   └── french/
+    │   │   │       └── -index.md
+    │   │   ├── authors/
+    │   │   │   ├── english/
+    │   │   │   │   ├── -index.md
+    │   │   │   │   ├── Admin.md
+    │   │   │   │   ├── EkSandy.md
+    │   │   │   │   └── lok.md
+    │   │   │   └── french/
+    │   │   │       └── -index.md
+    │   │   ├── blog/
+    │   │   │   ├── english/
+    │   │   │   │   ├── -index.md
+    │   │   │   │   ├── AutomateHealthcare.md
+    │   │   │   │   ├── Chitesh.md
+    │   │   │   │   ├── Metaverse.md
+    │   │   │   │   ├── Sumit.md
+    │   │   │   │   ├── Time-Complexity.md
+    │   │   │   │   ├── ai_engineer.md
+    │   │   │   │   ├── blockchain.md
+    │   │   │   │   ├── deepak.md
+    │   │   │   │   ├── llm.md
+    │   │   │   │   ├── lokesh.md
+    │   │   │   │   ├── post-1.md
+    │   │   │   │   ├── post-2.md
+    │   │   │   │   ├── post-3.md
+    │   │   │   │   ├── post-4.md
+    │   │   │   │   ├── post-5.md
+    │   │   │   │   ├── quantam-computing.md
+    │   │   │   │   ├── siddharth.md
+    │   │   │   │   ├── teja.md
+    │   │   │   │   └── umesh.md
+    │   │   │   └── french/
+    │   │   │       └── -index.md
+    │   │   ├── contact/
+    │   │   │   ├── english/
+    │   │   │   │   └── -index.md
+    │   │   │   └── french/
+    │   │   │       └── -index.md
+    │   │   ├── homepage/
+    │   │   │   ├── english/
+    │   │   │   │   └── -index.md
+    │   │   │   └── french/
+    │   │   │       └── -index.md
+    │   │   ├── pages/
+    │   │   │   └── english/
+    │   │   │       ├── elements.mdx
+    │   │   │       └── privacy-policy.md
+    │   │   └── sections/
+    │   │       └── english/
+    │   │           ├── call-to-action.md
+    │   │           └── testimonial.md
+    │   ├── hooks/
+    │   │   └── useTheme.ts
+    │   ├── i18n/
+    │   │   ├── en.json
+    │   │   └── fr.json
+    │   ├── layouts/
+    │   │   ├── Base.astro
+    │   │   ├── PostSingle.astro
+    │   │   ├── components/
+    │   │   │   ├── AuthorCard.astro
+    │   │   │   ├── BlogCard.astro
+    │   │   │   ├── Breadcrumbs.astro
+    │   │   │   ├── ImageMod.astro
+    │   │   │   ├── Logo.astro
+    │   │   │   ├── Pagination.astro
+    │   │   │   ├── Share.astro
+    │   │   │   ├── Social.astro
+    │   │   │   ├── ThemeSwitcher.astro
+    │   │   │   └── TwSizeIndicator.astro
+    │   │   ├── helpers/
+    │   │   │   ├── Disqus.tsx
+    │   │   │   ├── DynamicIcon.tsx
+    │   │   │   ├── LanguageSwitcher.tsx
+    │   │   │   ├── SearchModal.tsx
+    │   │   │   └── SearchResult.tsx
+    │   │   ├── partials/
+    │   │   │   ├── CallToAction.astro
+    │   │   │   ├── Footer.astro
+    │   │   │   ├── Header.astro
+    │   │   │   ├── PageHeader.astro
+    │   │   │   ├── PostSidebar.astro
+    │   │   │   └── Testimonial.astro
+    │   │   └── shortcodes/
+    │   │       ├── Accordion.tsx
+    │   │       ├── Button.tsx
+    │   │       ├── Notice.tsx
+    │   │       ├── Tab.tsx
+    │   │       ├── Tabs.tsx
+    │   │       ├── Video.tsx
+    │   │       └── Youtube.tsx
+    │   ├── lib/
+    │   │   ├── contentParser.astro
+    │   │   ├── taxonomyParser.astro
+    │   │   └── utils/
+    │   │       ├── bgImageMod.ts
+    │   │       ├── dateFormat.ts
+    │   │       ├── languageParser.ts
+    │   │       ├── readingTime.ts
+    │   │       ├── similarItems.ts
+    │   │       ├── sortFunctions.ts
+    │   │       ├── taxonomyFilter.ts
+    │   │       └── textConverter.ts
+    │   ├── pages/
+    │   │   ├── 404.astro
+    │   │   └── [...lang]/
+    │   │       ├── [regular].astro
+    │   │       ├── about.astro
+    │   │       ├── contact.astro
+    │   │       ├── index.astro
+    │   │       ├── authors/
+    │   │       │   ├── [single].astro
+    │   │       │   └── index.astro
+    │   │       ├── blog/
+    │   │       │   ├── [single].astro
+    │   │       │   ├── index.astro
+    │   │       │   └── page/
+    │   │       │       └── [slug].astro
+    │   │       ├── categories/
+    │   │       │   ├── [category].astro
+    │   │       │   └── index.astro
+    │   │       └── tags/
+    │   │           ├── [tag].astro
+    │   │           └── index.astro
+    │   ├── styles/
+    │   │   ├── base.scss
+    │   │   ├── buttons.scss
+    │   │   ├── components.scss
+    │   │   ├── main.scss
+    │   │   ├── navigation.scss
+    │   │   ├── search.scss
+    │   │   └── utilities.scss
+    │   └── types/
+    │       └── index.d.ts
+    └── .github/
+        ├── FUNDING.yml
+        ├── ISSUE_TEMPLATE/
+        │   └── feature_request.md
+        └── workflows/
+            └── greetings.yml
 ```
 
 ## **Contributors**
