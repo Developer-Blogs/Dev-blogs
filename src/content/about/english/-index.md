@@ -2,7 +2,7 @@
 title: "Hey, I am Krishna!"
 meta_title: "About"
 description: "developer "
-image: "/images/aboutprofile.jpg"
+image: "https://avatars.githubusercontent.com/u/90260004?v=4"
 draft: false
 ---
 
