@@ -5,14 +5,29 @@ description: "Don't just take our word for it - hear from some of our satisfied 
 
 # Testimonials
 testimonials:
-  - name: "Krishna Chaitanya"
-    designation: "Software Developer"
-    avatar: "/images/avatar-sm.png"
-    content: "Contributing to this open-source project has been an incredibly rewarding experience. Not only have I developed my skills and collaborated with a talented community, but I've also had the chance to share my knowledge through blog posts and see my contributions make a real impact. It's been a fantastic way to grow professionally and personally, and I’m proud to be part of such a meaningful project."
+  - name: "Diego Santos"
+    designation: "Contributor"
+    avatar: "https://avatars.githubusercontent.com/u/112042899?v=4"
+    content: "Loved how simple it is to add blogs here! The clean design and contributor-friendly setup make it a great space for developers."
 
-  - name: "Cv Lokesh Kumar"
-    designation: "Web Designer"
-    avatar: "/images/avatar-sm.png"
-    content: "Working on this open-source platform has been an incredible journey. The opportunity to contribute, collaborate, and learn from others has truly expanded my development skills. The supportive community and the open nature of the project make it easy to get involved and see your work come to life. It's a great project for anyone looking to dive into open source!"
+  - name: "Bhavantu Vadoliya"
+    designation: "Contributor"
+    avatar: "https://avatars.githubusercontent.com/u/167995869?v=4"
+    content: "Developer Blogs made my first GitHub contribution so smooth! The platform is easy to use, and the community is super supportive. "
 
+  - name: "Harsh Bopaliya"
+    designation: "Contributor"
+    avatar: "https://avatars.githubusercontent.com/u/119851222?v=4"
+    content: "This site helped me publish my first blog and contribute to open source. The process was straightforward, and the UI is fantastic!"
+
+  - name: "Muhammad Zubair"
+    designation: "Contributor"
+    avatar: "https://avatars.githubusercontent.com/u/59169211?v=4"
+    content: "Developer Blogs has been an awesome place to share my knowledge. It’s helped many first-time contributors (including me!) get started with GitHub."
+
+  - name: "Siddharth Kumar"
+    designation: "Contributor"
+    avatar: "https://avatars.githubusercontent.com/u/91362871?v=4"
+    content: "A great platform for tech writers and open-source enthusiasts! The blog submission process is easy, and contributing here was a great experience."
+    
 ---
