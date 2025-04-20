@@ -43,26 +43,24 @@ const currentPosts = sortedPosts.slice(0, config.settings.pagination);
   <PageHeader title={postIndex[0].data.title} />
   <section class="section">
     <div class="container">
-      <div class="row gx-5">
-        <!-- blog posts -->
-        <div class="lg:col-8">
-          <div class="row">
-            {
-              currentPosts.map((post) => (
-                <div class="mb-14 md:col-6">
-                  <BlogCard data={post} />
-                </div>
-              ))
-            }
-          </div>
-          <Pagination
-            section={BLOG_FOLDER}
-            currentPage={1}
-            totalPages={totalPages}
-          />
-        </div>
+      <!-- blog posts -->
+      <div class="row">
+        {
+          currentPosts.map((post) => (
+            <div class="mb-14 md:col-4">
+              <BlogCard data={post} />
+            </div>
+          ))
+        }
+      </div>
+      <Pagination
+        section={BLOG_FOLDER}
+        currentPage={1}
+        totalPages={totalPages}
+      />
 
-        <!-- sidebar -->
+      <!-- Categories and Tags -->
+      <div class="mt-10">
         <PostSidebar
           categories={categories}
           tags={tags}

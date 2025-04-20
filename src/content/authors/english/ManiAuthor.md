@@ -1,5 +1,5 @@
 ---
-title: Mani Shankar
+title: Mani Shankar Tulabandu
 email: manishtulabandu@gmail.com
 image: "/images/avatar.png"
 description: this is my description
