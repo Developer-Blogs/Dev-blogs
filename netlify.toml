@@ -1,6 +1,15 @@
 [build]
 publish = "dist"
-command = "yarn build"
+command = "yarn generate-json && yarn build"
 
 [build.environment]
 NODE_VERSION = "20"
+DEBUG = "*"
+
+[[plugins]]
+package = "@netlify/plugin-functions-core"
+  [plugins.inputs]
+  functionsDirectory = "netlify/functions"
+
+[functions]
+node_bundler = "esbuild"
