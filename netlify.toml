@@ -1,10 +1,12 @@
 [build]
 publish = "dist"
-command = "yarn generate-json && yarn build"
+command = "yarn install && yarn generate-json && yarn build"
 
 [build.environment]
 NODE_VERSION = "20"
 DEBUG = "*"
+NODE_ENV = "production"
+YARN_FLAGS = "--frozen-lockfile"
 
 [[plugins]]
 package = "@netlify/plugin-functions-core"
@@ -13,3 +15,8 @@ package = "@netlify/plugin-functions-core"
 
 [functions]
 node_bundler = "esbuild"
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200

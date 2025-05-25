@@ -23,6 +23,7 @@ export default defineConfig({
   site: config.site.base_url ? config.site.base_url : "http://examplesite.com",
   base: config.site.base_path ? config.site.base_path : "/",
   trailingSlash: config.site.trailing_slash ? "always" : "ignore",
+  output: "static",
   i18n: {
     locales: filteredSupportedLang,
     defaultLocale: default_language,
@@ -64,5 +65,14 @@ export default defineConfig({
       wrap: true,
     },
     extendDefaultPlugins: true,
+  },
+  vite: {
+    build: {
+      sourcemap: false,
+      minify: true,
+    },
+    ssr: {
+      noExternal: ['@astrojs/*'],
+    },
   },
 });
