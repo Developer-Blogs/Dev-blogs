@@ -1,22 +1,21 @@
 [build]
 publish = "dist"
-command = "yarn install && yarn generate-json && yarn build"
+command = "yarn install --frozen-lockfile && yarn generate-json && yarn build"
 
 [build.environment]
 NODE_VERSION = "20"
-DEBUG = "*"
 NODE_ENV = "production"
 YARN_FLAGS = "--frozen-lockfile"
-
-[[plugins]]
-package = "@netlify/plugin-functions-core"
-  [plugins.inputs]
-  functionsDirectory = "netlify/functions"
-
-[functions]
-node_bundler = "esbuild"
 
 [[redirects]]
 from = "/*"
 to = "/index.html"
 status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

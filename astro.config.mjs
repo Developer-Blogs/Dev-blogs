@@ -24,6 +24,10 @@ export default defineConfig({
   base: config.site.base_path ? config.site.base_path : "/",
   trailingSlash: config.site.trailing_slash ? "always" : "ignore",
   output: "static",
+  build: {
+    format: 'directory',
+    assets: '_assets',
+  },
   i18n: {
     locales: filteredSupportedLang,
     defaultLocale: default_language,
@@ -70,9 +74,14 @@ export default defineConfig({
     build: {
       sourcemap: false,
       minify: true,
+      rollupOptions: {
+        output: {
+          manualChunks: undefined,
+        },
+      },
     },
-    ssr: {
-      noExternal: ['@astrojs/*'],
+    optimizeDeps: {
+      exclude: ['@astrojs/mdx'],
     },
   },
 });
