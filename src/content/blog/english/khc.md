@@ -46,4 +46,12 @@ So if you're planning to join SRM-RMP, don’t just believe the brochures or the
 
 This post isn’t to bash the institution. It’s just the side of the story that doesn't make it to the official website.
 
+<<<<<<< HEAD
 ---
+=======
+---
+
+## Contact
+
+Have a story or experience from your own campus you want to share anonymously?
+>>>>>>> upstream/main
