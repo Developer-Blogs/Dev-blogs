@@ -36,7 +36,9 @@ export default defineConfig({
     service: squooshImageService(),
   },
   integrations: [
-    react(),
+    react({
+      include: ['**/Youtube.tsx', '**/*.tsx'],
+    }),
     sitemap(),
     tailwind({
       applyBaseStyles: false,
@@ -81,7 +83,11 @@ export default defineConfig({
       },
     },
     optimizeDeps: {
+      include: ['react-lite-youtube-embed'],
       exclude: ['@astrojs/mdx'],
+    },
+    ssr: {
+      noExternal: ['react-lite-youtube-embed'],
     },
   },
 });
