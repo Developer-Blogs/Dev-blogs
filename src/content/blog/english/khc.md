@@ -51,5 +51,3 @@ This post isn’t to bash the institution. It’s just the side of the story tha
 ## Contact
 
 Have a story or experience from your own campus you want to share anonymously?
-
-📩 **Email me at krishna.blogs@pm.me**
