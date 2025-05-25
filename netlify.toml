@@ -1,21 +1,6 @@
 [build]
-publish = "dist"
-command = "yarn install --frozen-lockfile && yarn generate-json && yarn build"
+  command = "yarn generate-json && astro build"
+  publish = "dist"
 
-[build.environment]
-NODE_VERSION = "20"
-NODE_ENV = "production"
-YARN_FLAGS = "--frozen-lockfile"
-
-[[redirects]]
-from = "/*"
-to = "/index.html"
-status = 200
-
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Frame-Options = "DENY"
-    X-XSS-Protection = "1; mode=block"
-    X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "strict-origin-when-cross-origin"
+[build.processing]
+  skip_processing = true
